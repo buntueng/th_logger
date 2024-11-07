@@ -103,6 +103,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.timer.start(10000)  # Update every 1000ms (1 second)
 
     def update_graphs(self):
+        
         x_data = datetime.datetime.now()  # Add timestamp
 
         # Generate random data
