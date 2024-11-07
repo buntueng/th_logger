@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1361</width>
+    <height>903</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Temperature and Humidity monitor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="temperature_groupBox">
+      <property name="minimumSize">
+       <size>
+        <width>520</width>
+        <height>750</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Temperature</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="TCH1_label">
+         <property name="text">
+          <string>CH1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="TCH1_widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>100</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="TCH2_label">
+         <property name="text">
+          <string>CH2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="TCH2_widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="TCH3_label">
+         <property name="text">
+          <string>CH3</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="TCH3_widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="TCH4_label">
+         <property name="text">
+          <string>CH4</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="TCH4_widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="TCH5_label">
+         <property name="text">
+          <string>CH5</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="TCH5_widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="TCH6_label">
+         <property name="text">
+          <string>CH6</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="TCH6_widget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>70</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="humidity_groupBox">
+      <property name="minimumSize">
+       <size>
+        <width>520</width>
+        <height>750</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Humidityg</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="HCH1_label">
+         <property name="text">
+          <string>CH1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="HCH1_widget" native="true"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="HCH2_label">
+         <property name="text">
+          <string>CH2</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="HCH2_widget" native="true"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="HCH3_label">
+         <property name="text">
+          <string>CH3</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="HCH3_widget" native="true"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="HCH4_label">
+         <property name="text">
+          <string>CH4</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="HCH4_widget" native="true"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="HCH5_label">
+         <property name="text">
+          <string>CH5</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="HCH5_widget" native="true"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="HCH6_label">
+         <property name="text">
+          <string>CH6</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="HCH6_widget" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="status_groupBox">
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>System status</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QPlainTextEdit" name="status_plainTextEdit">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>500</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>280</width>
+           <height>99999</height>
+          </size>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
