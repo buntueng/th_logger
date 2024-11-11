@@ -34,10 +34,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             current_path = os.path.dirname(os.path.realpath(__file__))
             
-        database_path = os.path.join(current_path, 'data.db')
+        self.database_path = os.path.join(current_path, 'data.db')
             
-        if not os.path.exists(database_path):
-            conn = sqlite3.connect(database_path)
+        if not os.path.exists(self.database_path):
+            conn = sqlite3.connect(self.database_path)
             c = conn.cursor()
             # create table th_sensor if not exists
             # datetime, temperature1, temperature2, temperature3, temperature4, temperature5, temperature6, humidity1, humidity2, humidity3, humidity4, humidity5, humidity6, sensor1_status, sensor2_status, sensor3_status, sensor4_status, sensor5_status, sensor6_status
@@ -107,24 +107,51 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         x_data = datetime.datetime.now()  # Add timestamp
 
         # Generate random data
-        y_data1 = random.randint(0, 50)
-        # ... (For other graphs)
+        t_data1 = random.randint(0, 50)
+        t_data2 = random.randint(0, 50)
+        t_data3 = random.randint(0, 50)
+        t_data4 = random.randint(0, 50)
+        t_data5 = random.randint(0, 50)
+        t_data6 = random.randint(0, 50)
+
+        h_data1 = random.randint(0, 100)
+        h_data2 = random.randint(0, 100)
+        h_data3 = random.randint(0, 100)
+        h_data4 = random.randint(0, 100)
+        h_data5 = random.randint(0, 100)
+        h_data6 = random.randint(0, 100)
+
+        # sensor status
+        sensor1_status = 1
+        sensor2_status = 0
+        sensor3_status = 1
+        sensor4_status = 0
+        sensor5_status = 1
+        sensor6_status = 0
 
         # Update the charts
-        self.temperature_chart1.update_graph(x_data, y_data1)
-        self.temperature_chart2.update_graph(x_data, y_data1)
-        self.temperature_chart3.update_graph(x_data, y_data1)
-        self.temperature_chart4.update_graph(x_data, y_data1)
-        self.temperature_chart5.update_graph(x_data, y_data1)
-        self.temperature_chart6.update_graph(x_data, y_data1)
+        self.temperature_chart1.update_graph(x_data, t_data1)
+        self.temperature_chart2.update_graph(x_data, t_data2)
+        self.temperature_chart3.update_graph(x_data, t_data3)
+        self.temperature_chart4.update_graph(x_data, t_data4)
+        self.temperature_chart5.update_graph(x_data, t_data5)
+        self.temperature_chart6.update_graph(x_data, t_data6)
         # ... (For other graphs)
         
-        self.humidity_chart1.update_graph(x_data, y_data1)
-        self.humidity_chart2.update_graph(x_data, y_data1)
-        self.humidity_chart3.update_graph(x_data, y_data1)
-        self.humidity_chart4.update_graph(x_data, y_data1)
-        self.humidity_chart5.update_graph(x_data, y_data1)
-        self.humidity_chart6.update_graph(x_data, y_data1)
+        self.humidity_chart1.update_graph(x_data, h_data1)
+        self.humidity_chart2.update_graph(x_data, h_data2)
+        self.humidity_chart3.update_graph(x_data, h_data3)
+        self.humidity_chart4.update_graph(x_data, h_data4)
+        self.humidity_chart5.update_graph(x_data, h_data5)
+        self.humidity_chart6.update_graph(x_data, h_data6)
+
+        # Insert data into the database
+        conn = sqlite3.connect(self.database_path)
+        c = conn.cursor()
+        c.execute('''INSERT INTO th_sensor (datetime, temperature1, temperature2, temperature3, temperature4, temperature5, temperature6, humidity1, humidity2, humidity3, humidity4, humidity5, humidity6, sensor1_status, sensor2_status, sensor3_status, sensor4_status, sensor5_status, sensor6_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
+                  (x_data, t_data1, t_data2, t_data3, t_data4, t_data5, t_data6, h_data1, h_data2, h_data3, h_data4, h_data5, h_data6, sensor1_status, sensor2_status, sensor3_status, sensor4_status, sensor5_status, sensor6_status))
+        conn.commit()
+        conn.close()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
